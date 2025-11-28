@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction Form</title>
+</head>
+<body>
+    <h1>Enter Patient Data for Prediction</h1>
+    <form action="{{ url_for('predict_datapoint') }}" method="POST">
+        <label>Pregnancies:</label><input type="number" name="Pregnancies" required><br>
+        <label>Glucose:</label><input type="number" step="any" name="Glucose" required><br>
+        <label>Blood Pressure:</label><input type="number" step="any" name="BloodPressure" required><br>
+        <label>Skin Thickness:</label><input type="number" step="any" name="SkinThickness" required><br>
+        <label>Insulin:</label><input type="number" step="any" name="Insulin" required><br>
+        <label>BMI:</label><input type="number" step="any" name="BMI" required><br>
+        <label>Diabetes Pedigree Function:</label><input type="number" step="any" name="DiabetesPedigreeFunction" required><br>
+        <label>Age:</label><input type="number" name="Age" required><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

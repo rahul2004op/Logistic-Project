@@ -1,15 +1,19 @@
 from flask import Flask, request, app, render_template
 from flask import Response
-import pickle 
+import pickle
 import numpy as np
 import pandas as pd
+import os
 
 application = Flask(__name__)
 app=application
 
-scaler = pickle.load(open('Model/standardscaler.pkl', 'rb'))
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-model= pickle.load(open("Model/ModelPrediction.pkl", 'rb'))
+scaler = pickle.load(open(os.path.join(script_dir, 'Model', 'standardscaler.pkl'), 'rb'))
+
+model= pickle.load(open(os.path.join(script_dir, 'Model', 'ModelPrediction.pkl'), 'rb'))
 
 ## route for homepage
 
